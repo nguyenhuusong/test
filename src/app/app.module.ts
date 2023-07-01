@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './navbar/main-nav/main-nav.component';
@@ -12,8 +12,9 @@ import { SearchBarComponent } from './navbar/search-bar/search-bar.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { DataTableComponent } from './data-table/data-table.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { TuyendungComponent } from './tuyendung/tuyendung.component';
+import { AuthInterceptorService } from 'src/share/intercept.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { AgGridModule } from 'ag-grid-angular';
     MainNavComponent,
     SideNavComponent,
     SearchBarComponent,
-    DataTableComponent,
+    TuyendungComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,13 @@ import { AgGridModule } from 'ag-grid-angular';
     HttpClientModule,
     AgGridModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
