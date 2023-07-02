@@ -14,7 +14,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AgGridModule } from 'ag-grid-angular';
 import { TuyendungComponent } from './tuyendung/tuyendung.component';
-import { AuthInterceptorService } from 'src/share/intercept.service';
+import { AuthInterceptorService } from 'src/app/share/intercept.service';
+import { AgGridComponent } from './share/ag-grid/ag-grid.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthInterceptorService } from 'src/share/intercept.service';
     SideNavComponent,
     SearchBarComponent,
     TuyendungComponent,
+    AgGridComponent,
   ],
   imports: [
     BrowserModule,

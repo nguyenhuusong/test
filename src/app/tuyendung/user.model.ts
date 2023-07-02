@@ -1,0 +1,33 @@
+export interface User {
+  account_status: string;
+  app_method: string;
+  birthDay: string;
+  canId: string;
+  can_st: number;
+  can_status: string;
+  created_by: string;
+  created_dt: string;
+  date_of_app: string;
+  date_to: string;
+  email: string;
+  fullName: string;
+  hiring_user_id: string;
+  image_url: string;
+  interview_result: number;
+  is_send_email: string;
+  job_name: string;
+  join_date: string;
+  note: string;
+  notifyTempIds: string;
+  phone: string;
+  profile_status: string;
+  recruitmentDay: string;
+  round_result: number;
+  rowid: number;
+  sent_email_st: string;
+  sex: string;
+  sourceInfor: string;
+  status_account: number;
+  vacancyId: string;
+  vacancy_name: string;
+}
